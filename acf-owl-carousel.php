@@ -47,7 +47,7 @@ function acfoc_custom_slider() {
       // Loop through rows.
       while( have_rows('brands') ) : the_row();
 
-          // Load sub field value.
+          $html .= "<span>Something Here</span>";
 
           $logo = get_sub_field('brand_name');
 
