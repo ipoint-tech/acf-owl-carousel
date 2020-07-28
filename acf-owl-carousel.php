@@ -51,7 +51,7 @@ function acfoc_custom_slider() {
 
           $sub_html .= "<span>Something Here</span> ";
 
-          $sub_name = the_sub_field('brand_name');
+          $sub_name = get_sub_field('brand_name');
 
           $sub_value = get_sub_field_object('brand_logo');
 
