@@ -46,9 +46,7 @@ function acfoc_custom_slider() {
 
           // Load sub field value.
           $sub_value = get_sub_field('brand_name');
-          echo "<div class='testing'><p>";
-          echo $sub_value;
-          echo "</div></p>";
+          $sub_value .= "<div class='testing'><p>" . $sub_value . "</div></p>";
 
       // End loop.
       endwhile;
@@ -60,6 +58,7 @@ function acfoc_custom_slider() {
   $html = "<div class='owl-carousel owl-theme'><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div></div>";
 
   return $html;
+  return $sub_value;
 
 }
 
