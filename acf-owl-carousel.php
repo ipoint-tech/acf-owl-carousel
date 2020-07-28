@@ -48,9 +48,9 @@ function acfoc_custom_slider() {
 
           $logo_image = get_sub_field('brand_logo');
 
-          $html = "<div class='testing'><p>";
+          $html = "<div class='testing'>";
           $html .= wp_get_attachment_image( $logo_image, 'full' );
-          $html .= "</div></p>";
+          $html .= "</div>";
       // End loop.
       endwhile;
 
