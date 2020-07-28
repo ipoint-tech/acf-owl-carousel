@@ -45,20 +45,23 @@ function acfoc_custom_slider() {
       while( have_rows('brands') ) : the_row();
 
           // Load sub field value.
+
           $sub_value = get_sub_field('brand_name');
           $sub_value .= "<div class='testing'><p>" . $sub_value . "</div></p>";
 
+          $html = "<div class='testing'><p>";
+          $html .= $sub_value;
+          $html .= "</div></p>";
       // End loop.
       endwhile;
 
   // No value.
   else :
-      // Do something...
+      $html = "<div class='owl-carousel owl-theme'><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div></div>";
   endif;
-  $html = "<div class='owl-carousel owl-theme'><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div></div>";
 
   //return $html;
-  return $sub_value;
+  return $html;
 
 }
 
