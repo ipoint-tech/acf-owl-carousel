@@ -49,7 +49,7 @@ function acfoc_custom_slider() {
 
           $html .= "<span>Something Here</span>";
 
-          $sub_value = get_sub_field('brand_name');
+          $sub_value = get_sub_field('brand_logo');
 
           //$html = "<div class='testing'>";
           $html .= wp_get_attachment_image( $logo, 'full' );
@@ -65,8 +65,7 @@ function acfoc_custom_slider() {
   endif;
 
   //return $html;
-  return $sub_value;
-
+  return wp_get_attachment_image( $sub_value, 'full' );
 }
 
 add_shortcode('custom-slider', 'acfoc_custom_slider');
