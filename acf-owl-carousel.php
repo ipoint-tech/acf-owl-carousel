@@ -49,14 +49,18 @@ function acfoc_custom_slider() {
 
           $html .= "<span>Something Here</span>";
 
-          $sub_value = get_sub_field('brand_logo');
+          $sub_value = get_sub_field_object('brand_logo');
+
+          $image_id = $sub_value['ID'];
 
           //$html = "<div class='testing'>";
           $image_src = wp_get_attachment_image_src( $sub_value );
 
-          $html_img = "<img src='" . $image_src ."' />";
+          //$html_img = "<img src='" . $image_src ."' />";
 
-          $html .= $html_img;
+          //$html .= $html_img;
+
+          $html .= $image_id;
           //$html .= "</div>";
       // End loop.
       endwhile;
