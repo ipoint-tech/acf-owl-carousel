@@ -11,7 +11,7 @@
 // create shortcode for displaying Carousel
 
 function acf_custom_slider() {
-  $html = "<div class='owl-carousel'><p>hello</p></div>;
+  $html = "<div class='owl-carousel'><p>hello</p></div>";
 
   return $html;
 
