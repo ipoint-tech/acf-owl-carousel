@@ -11,8 +11,10 @@
 // first things first, let's add the scripts and styles we need.
 function acfoc_add_styles() {
   wp_register_style('oc_styles', plugins_url('/lib/owlcarousel/assets/owl.carousel.min.css', __FILE__));
+  wp_register_style('oc_styles_default', plugins_url('/lib/owlcarousel/assets/owl.theme.default.min.css', __FILE__));
 
   wp_enqueue_style('oc_styles');
+  wp_enqueue_style('oc_styles_default');
 }
 
 add_action( 'wp_enqueue_scripts', 'acfoc_add_styles' );
