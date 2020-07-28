@@ -44,10 +44,12 @@ function acfoc_custom_slider() {
 
       $html = "<div class='testing'>";
 
+      $sub_sections = array();
+
       // Loop through rows.
       while( have_rows('brands') ) : the_row();
 
-          $html .= "<span>Something Here</span>";
+          $sub_html .= "<span>Something Here</span> ";
 
           $sub_value = get_sub_field_object('brand_logo');
 
@@ -56,17 +58,19 @@ function acfoc_custom_slider() {
           //$html = "<div class='testing'>";
           //$image_src = wp_get_attachment_image_src( $image_id );
 
-          $image = wp_get_attachment_image( $image_id );
+          //$image = wp_get_attachment_image( $image_id );
 
           //$html_img = "<img src='" . $image_src ."' />";
 
-          $html .= $image_id;
+          $sub_html .= $image_id;
+
+          $sub_sections[] = $sub_html;
 
           //$html .= $image_src;
           //$html .= "</div>";
       // End loop.
       endwhile;
-
+      $html .= implode(",", $sub_sections);
       $html .= "</div>";
 
   // No value.
