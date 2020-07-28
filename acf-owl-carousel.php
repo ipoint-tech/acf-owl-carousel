@@ -57,7 +57,7 @@ function acfoc_custom_slider() {
   endif;
   $html = "<div class='owl-carousel owl-theme'><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div></div>";
 
-  return $html;
+  //return $html;
   return $sub_value;
 
 }
