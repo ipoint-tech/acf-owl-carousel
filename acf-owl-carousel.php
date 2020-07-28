@@ -37,6 +37,24 @@ add_action( 'wp_enqueue_scripts', 'acfoc_add_scripts' );
 // create shortcode for displaying Carousel
 
 function acfoc_custom_slider() {
+
+  // Check rows exists.
+  if( have_rows('brands') ):
+
+      // Loop through rows.
+      while( have_rows('brands') ) : the_row();
+
+          // Load sub field value.
+          $sub_value = get_sub_field('brand_logo');
+          echo $sub_value;
+
+      // End loop.
+      endwhile;
+
+  // No value.
+  else :
+      // Do something...
+  endif;
   $html = "<div class='owl-carousel owl-theme'><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div></div>";
 
   return $html;

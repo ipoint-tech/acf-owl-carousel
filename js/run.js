@@ -5,5 +5,5 @@ jQuery(function($) {
     loop:true,
     margin:10,
     nav:true
-})
+  })
 });
