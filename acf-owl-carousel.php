@@ -23,8 +23,10 @@ add_action( 'wp_enqueue_scripts', 'acfoc_add_styles' );
 
 function acfoc_add_scripts() {
   wp_register_script('oc_scripts', plugins_url('/lib/owlcarousel/owl.carousel.min.js', __FILE__), array('jquery'),'1.1', true);
+  wp_register_script('run_script', plugins_url('/js/run.js', __FILE__), array('jquery'),'1.1', true);
 
   wp_enqueue_script('oc_scripts');
+  wp_enqueue_script('run_script');
 
 }
 
