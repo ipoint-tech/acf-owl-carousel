@@ -1,6 +1,6 @@
 jQuery(function($) {
 
-  alert('hello!');
+  // alert('hello!');
   $(".owl-carousel").owlCarousel({
     loop:true,
     margin:10,
