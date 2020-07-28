@@ -24,7 +24,7 @@ function acfoc_add_scripts() {
 // create shortcode for displaying Carousel
 
 function acfoc_custom_slider() {
-  $html = "<div class='owl-carousel'><p>hello</p></div>";
+  $html = "<div class='owl-carousel'></div><div class='debug'><p>hello</p></div>";
 
   return $html;
 
