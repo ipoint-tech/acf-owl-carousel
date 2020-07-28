@@ -1,3 +1,4 @@
+<?php
 /**
  * Plugin Name: ACF Owl Carousel
  * Plugin URI: https://github.com/ipoint-tech/acf-owl-carousel
@@ -18,5 +19,4 @@ function acf_custom_slider() {
 
 add_shortcode('custom-slider', 'acf_custom_slider');
 
-
-/* testing */
+?>
