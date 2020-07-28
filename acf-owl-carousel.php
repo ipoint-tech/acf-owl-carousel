@@ -38,8 +38,11 @@ add_action( 'wp_enqueue_scripts', 'acfoc_add_scripts' );
 
 function acfoc_custom_slider() {
 
+
   // Check rows exists.
   if( have_rows('brands') ):
+
+      $html = "<div class='testing'>";
 
       // Loop through rows.
       while( have_rows('brands') ) : the_row();
@@ -49,10 +52,12 @@ function acfoc_custom_slider() {
           $logo = get_sub_field('brand_logo');
 
           //$html = "<div class='testing'>";
-          $html = wp_get_attachment_image( $logo, 'full' );
+          $html .= wp_get_attachment_image( $logo, 'full' );
           //$html .= "</div>";
       // End loop.
       endwhile;
+
+      $html .= "</div>";
 
   // No value.
   else :
