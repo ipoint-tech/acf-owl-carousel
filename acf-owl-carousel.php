@@ -46,7 +46,9 @@ function acfoc_custom_slider() {
 
           // Load sub field value.
           $sub_value = get_sub_field('brand_name');
+          echo "<div class='testing'><p>";
           echo $sub_value;
+          echo "</div></p>";
 
       // End loop.
       endwhile;
