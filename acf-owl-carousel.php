@@ -60,7 +60,7 @@ function acfoc_custom_slider() {
 
           //$html_img = "<img src='" . $image_src ."' />";
 
-          $html .= $image;
+          $html .= $image_id;
 
           //$html .= $image_src;
           //$html .= "</div>";
