@@ -37,7 +37,7 @@ add_action( 'wp_enqueue_scripts', 'acfoc_add_scripts' );
 // create shortcode for displaying Carousel
 
 function acfoc_custom_slider() {
-  $html = "<div class='owl-carousel'><div>Your Content</div><div>Your Content</div></div><div class='debug'><p>hello</p></div>";
+  $html = "<div class='owl-carousel'><div class="slider">Your Content</div><div class="slider">Your Content</div></div><div class='debug'><p>hello</p></div>";
 
   return $html;
 
