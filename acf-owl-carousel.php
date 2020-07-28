@@ -6,3 +6,14 @@
  * Author: Degger
  * Author URI: https://ipoint-tech.com
  */
+
+// create shortcode for displaying Carousel
+
+function acf_custom_slider() {
+  $message = "hello";
+
+  return $message;
+
+}
+
+add_shortcode('custom-slider', 'acf_custom_slider');
