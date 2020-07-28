@@ -46,11 +46,10 @@ function acfoc_custom_slider() {
 
           // Load sub field value.
 
-          $sub_value = get_sub_field('brand_name');
-          $sub_value .= "<div class='testing'><p>" . $sub_value . "</div></p>";
+          $logo_image = get_sub_field('brand_logo');
 
           $html = "<div class='testing'><p>";
-          $html .= $sub_value;
+          $html .= wp_get_attachment_image( $logo_image, 'full' );
           $html .= "</div></p>";
       // End loop.
       endwhile;
