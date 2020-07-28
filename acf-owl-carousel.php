@@ -51,6 +51,8 @@ function acfoc_custom_slider() {
 
           $sub_html .= "<span>Something Here</span> ";
 
+          $sub_name = the_sub_field('brand_name');
+
           $sub_value = get_sub_field_object('brand_logo');
 
           $image_id = $sub_value['ID'];
@@ -62,7 +64,7 @@ function acfoc_custom_slider() {
 
           //$html_img = "<img src='" . $image_src ."' />";
 
-          $sub_html .= $image_id;
+          $sub_html .= $image_id . " | " . $sub_name . " - ";
 
           $sub_sections[] = $sub_html;
 
