@@ -52,7 +52,7 @@ function acfoc_custom_slider() {
           $sub_value = get_sub_field('brand_logo');
 
           //$html = "<div class='testing'>";
-          $image .= wp_get_attachment_image_src( $sub_value );
+          $image = wp_get_attachment_image_src( $sub_value );
           //$html .= "</div>";
       // End loop.
       endwhile;
