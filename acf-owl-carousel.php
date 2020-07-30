@@ -54,13 +54,14 @@ function acfoc_custom_slider() {
           $image_id = $sub_value['ID'];
 
           //$html = "<div class='testing'>";
-          //$image_src = wp_get_attachment_image_src( $image_id );
+
+          $image_src = wp_get_attachment_image_src( $image_id );
 
           $image = wp_get_attachment_image( $image_id );
 
           //$html_img = "<img src='" . $image_src ."' />";
 
-          $html .= $image_id;
+          $html .= $image_src;
 
           //$html .= $image_src;
           //$html .= "</div>";
