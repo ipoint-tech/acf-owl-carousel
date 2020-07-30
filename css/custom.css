@@ -1,6 +1,9 @@
 .slider {
-  background-color: #222;
-  color: #fff;
-  padding: 10%;
-  display: block;
+  margin: 0 20px;
+  max-height: 200px;
+  display: inline-block;
+}
+
+.slider img {
+  vertical-align: middle;
 }

@@ -39,14 +39,10 @@ add_action( 'wp_enqueue_scripts', 'acfoc_add_scripts' );
 function acfoc_custom_slider() {
 
 
-  $html = "<div class='testing'>";
+  $html = "<div class='owl-carousel owl-theme'>";
 
-  $image = get_field('header_image');
-
-  $html .= wp_get_attachment_image($image, 'full');
-
-  // this works
-  //$html .= $image['url'];
+  //$image = get_field('header_image');
+  //$html .= '<img src="' . $image['url'] . '" />';
 
   // Check rows exists.
   if( have_rows('brands') ):
@@ -54,35 +50,18 @@ function acfoc_custom_slider() {
       // Loop through rows.
       while( have_rows('brands') ) : the_row();
 
-          /*
-          $html .= "<span>Something Here</span>";
+        $brand_image = get_sub_field('brand_logo');
 
-          $sub_value = get_sub_field_object('brand_logo');
+        $html .= '<div class="slider item"><img src="' . $brand_image['url'] . '" /></div>';
 
-          $image_id = $sub_value['ID'];
-
-          //$html = "<div class='testing'>";
-
-          $image_src = wp_get_attachment_image_src( $image_id );
-
-          $image = wp_get_attachment_image( $image_id );
-
-          //$html_img = "<img src='" . $image_src ."' />";
-
-          $html .= $image;
-
-          //$html .= $image_src;
-          //$html .= "</div>";
-          */
       // End loop.
       endwhile;
 
       $html .= "</div>";
-      $html .= "<div class='owl-carousel'></div>";
 
 
   else :
-      $html = "<div class='owl-carousel owl-theme'><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div></div>";
+      $html = "<div class='owl-carousel no-slides'><p>No slides could be found</p></div>";
   endif;
 
   //return $html;
