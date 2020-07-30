@@ -18,10 +18,7 @@ function acfoc_add_styles() {
   wp_enqueue_style('oc_styles_default');
   wp_enqueue_style('custom_styles');
 }
-
 add_action( 'wp_enqueue_scripts', 'acfoc_add_styles' );
-
-
 
 function acfoc_add_scripts() {
   wp_register_script('oc_scripts', plugins_url('/lib/owlcarousel/owl.carousel.min.js', __FILE__), array('jquery'),'1.1', true);
@@ -31,48 +28,35 @@ function acfoc_add_scripts() {
   wp_enqueue_script('run_script');
 
 }
-
 add_action( 'wp_enqueue_scripts', 'acfoc_add_scripts' );
 
-// create shortcode for displaying Carousel
-
+// create shortcode for displaying brands logo slider
 function acfoc_custom_slider() {
 
-
-  $html = "<div class='owl-carousel owl-theme owl-box'>";
-
-  //$image = get_field('header_image');
-  //$html .= '<img src="' . $image['url'] . '" />';
-
-  // Check rows exists.
   if( have_rows('brands') ):
 
-      // Loop through rows.
-      while( have_rows('brands') ) : the_row();
+    $html = "<div class='owl-carousel owl-theme'>";
 
-        $brand_image = get_sub_field('brand_logo');
+    while( have_rows('brands') ) : the_row();
 
-        if( !empty( $brand_image ) ):
-          $html .= '<div class="slider item"><img src="' . $brand_image['url'] . '" /></div>';
-        endif;
+      $brand_image = get_sub_field('brand_logo');
 
-      // End loop.
-      endwhile;
+      if( !empty( $brand_image ) ):
+        $html .= '<div class="slider item"><img src="' . $brand_image['url'] . '" /></div>';
+      endif;
+
+    endwhile;
 
       $html .= "</div>";
 
-
   else :
-      $html = "<div class='owl-carousel no-slides'><p>No slides could be found</p></div>";
+
+    $html = "<div class='owl-carousel no-slides'><p>No slides could be found</p></div>";
+
   endif;
 
-  //return $html;
   return $html;
 }
 
 add_shortcode('custom-slider', 'acfoc_custom_slider');
-
-
-/* testing */
-
 ?>
