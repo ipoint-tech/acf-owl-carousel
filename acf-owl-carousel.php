@@ -43,7 +43,10 @@ function acfoc_custom_slider() {
 
   $image = get_field('header_image');
 
-  $html .= $image['url'];
+  $html .= wp_get_attachment_image($image, 'full');
+
+  // this works
+  //$html .= $image['url'];
 
   // Check rows exists.
   if( have_rows('brands') ):
