@@ -1,7 +1,3 @@
 jQuery(function($) {
-
-  // alert('hello!');
-  $(".owl-carousel").owlCarousel({
-    loop:true
-  })
+  $(".owl-carousel").owlCarousel();
 });

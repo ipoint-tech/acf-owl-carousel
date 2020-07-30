@@ -39,7 +39,7 @@ add_action( 'wp_enqueue_scripts', 'acfoc_add_scripts' );
 function acfoc_custom_slider() {
 
 
-  $html = "<div class='owl-carousel owl-theme'>";
+  $html = "<div class='owl-carousel owl-theme owl-box'>";
 
   //$image = get_field('header_image');
   //$html .= '<img src="' . $image['url'] . '" />';
@@ -52,7 +52,9 @@ function acfoc_custom_slider() {
 
         $brand_image = get_sub_field('brand_logo');
 
-        $html .= '<div class="slider item"><img src="' . $brand_image['url'] . '" /></div>';
+        if( !empty( $brand_image ) ):
+          $html .= '<div class="slider item"><img src="' . $brand_image['url'] . '" /></div>';
+        endif;
 
       // End loop.
       endwhile;

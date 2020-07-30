@@ -1,9 +1,13 @@
 .slider {
-  margin: 0 20px;
-  max-height: 200px;
-  display: inline-block;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: auto;
+  margin: 0 8px;
 }
 
 .slider img {
-  vertical-align: middle;
+  margin: 0 auto;
+  overflow: auto;
 }
