@@ -39,14 +39,15 @@ add_action( 'wp_enqueue_scripts', 'acfoc_add_scripts' );
 function acfoc_custom_slider() {
 
 
+$html = "<div class='testing'>";
+
   // Check rows exists.
   if( have_rows('brands') ):
-
-      $html = "<div class='testing'>";
 
       // Loop through rows.
       while( have_rows('brands') ) : the_row();
 
+          /*
           $html .= "<span>Something Here</span>";
 
           $sub_value = get_sub_field_object('brand_logo');
@@ -65,12 +66,14 @@ function acfoc_custom_slider() {
 
           //$html .= $image_src;
           //$html .= "</div>";
+          */
       // End loop.
       endwhile;
 
       $html .= "</div>";
+      $html .= "<div class='owl-carousel'></div>";
 
-  // No value.
+
   else :
       $html = "<div class='owl-carousel owl-theme'><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div></div>";
   endif;
