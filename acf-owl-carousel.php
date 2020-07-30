@@ -39,7 +39,11 @@ add_action( 'wp_enqueue_scripts', 'acfoc_add_scripts' );
 function acfoc_custom_slider() {
 
 
-$html = "<div class='testing'>";
+  $html = "<div class='testing'>";
+
+  $image = get_field('header_image');
+
+  $html .= $image['url'];
 
   // Check rows exists.
   if( have_rows('brands') ):
