@@ -1,6 +1,13 @@
 .slider {
-  background-color: #222;
-  color: #fff;
-  padding: 10%;
-  display: block;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: auto;
+  margin: 0 8px;
+}
+
+.slider img {
+  margin: 0 auto;
+  overflow: auto;
 }

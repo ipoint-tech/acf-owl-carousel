@@ -18,10 +18,7 @@ function acfoc_add_styles() {
   wp_enqueue_style('oc_styles_default');
   wp_enqueue_style('custom_styles');
 }
-
 add_action( 'wp_enqueue_scripts', 'acfoc_add_styles' );
-
-
 
 function acfoc_add_scripts() {
   wp_register_script('oc_scripts', plugins_url('/lib/owlcarousel/owl.carousel.min.js', __FILE__), array('jquery'),'1.1', true);
@@ -31,62 +28,35 @@ function acfoc_add_scripts() {
   wp_enqueue_script('run_script');
 
 }
-
 add_action( 'wp_enqueue_scripts', 'acfoc_add_scripts' );
 
-// create shortcode for displaying Carousel
-
+// create shortcode for displaying brands logo slider
 function acfoc_custom_slider() {
 
-
-  // Check rows exists.
   if( have_rows('brands') ):
 
-      $html = "<div class='testing'>";
+    $html = "<div class='owl-carousel owl-theme'>";
 
-      $sub_sections = array();
+    while( have_rows('brands') ) : the_row();
 
-      // Loop through rows.
-      while( have_rows('brands') ) : the_row();
+      $brand_image = get_sub_field('brand_logo');
 
-          $sub_html .= "<span>Something Here</span> ";
+      if( !empty( $brand_image ) ):
+        $html .= '<div class="slider item"><img src="' . $brand_image['url'] . '" /></div>';
+      endif;
 
-          $sub_name = get_sub_field('brand_name');
+    endwhile;
 
-          $sub_value = get_sub_field_object('brand_logo');
-
-          $image_id = $sub_value['ID'];
-
-          //$html = "<div class='testing'>";
-          //$image_src = wp_get_attachment_image_src( $image_id );
-
-          //$image = wp_get_attachment_image( $image_id );
-
-          //$html_img = "<img src='" . $image_src ."' />";
-
-          $sub_html .= $image_id . " | " . $sub_name . " - ";
-
-          $sub_sections[] = $sub_html;
-
-          //$html .= $image_src;
-          //$html .= "</div>";
-      // End loop.
-      endwhile;
-      $html .= implode(",", $sub_sections);
       $html .= "</div>";
 
-  // No value.
   else :
-      $html = "<div class='owl-carousel owl-theme'><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div><div class='slider item'>Your Content</div></div>";
+
+    $html = "<div class='owl-carousel no-slides'><p>No slides could be found</p></div>";
+
   endif;
 
-  //return $html;
   return $html;
 }
 
 add_shortcode('custom-slider', 'acfoc_custom_slider');
-
-
-/* testing */
-
 ?>
