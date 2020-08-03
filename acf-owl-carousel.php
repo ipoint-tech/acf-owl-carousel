@@ -57,6 +57,35 @@ function acfoc_custom_slider() {
 
   return $html;
 }
-
 add_shortcode('custom-slider', 'acfoc_custom_slider');
+
+
+function acfos_brands_no_slider() {
+
+  if( have_rows('brands') ):
+
+    $html = "<div class='owl-carousel owl-theme'>";
+
+    while( have_rows('brands') ) : the_row();
+
+      $brand_name = get_sub_field('brand_name');
+
+      if( !empty( $brand_name ) ):
+        $html .= '<div>'. $brand_name . '</div>';
+      endif;
+
+    endwhile;
+
+      $html .= "</div>";
+
+  else :
+
+    $html = "<div class='brands-no-slider'><p><em>No brands yet...</em></p></div>";
+
+  endif;
+
+  return $html;
+}
+
+add_shortcode('brands-no-slider', 'acfos_brands_no_slider');
 ?>
