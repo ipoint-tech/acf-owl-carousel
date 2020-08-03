@@ -47,7 +47,7 @@ function acfoc_custom_slider() {
 
     endwhile;
 
-      $html .= "</div>";
+      $html .= "</div><span>hello</span>";
 
   else :
 
