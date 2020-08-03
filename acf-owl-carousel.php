@@ -64,7 +64,7 @@ function acfos_brands_no_slider() {
 
   if( have_rows('brands') ):
 
-    $html = "<div class='owl-carousel owl-theme'>";
+    $html = "<div class='brands-list'><ul>";
 
     while( have_rows('brands') ) : the_row();
 
@@ -72,12 +72,12 @@ function acfos_brands_no_slider() {
       $safe_brand_name = htmlspecialchars ($brand_name);
 
       if( !empty( $brand_name ) ):
-        $html .= '<div>'. $safe_brand_name . '</div>';
+        $html .= '<li>'. $safe_brand_name . '</li>';
       endif;
 
     endwhile;
 
-      $html .= "</div>";
+      $html .= "</ul></div>";
 
   else :
 
