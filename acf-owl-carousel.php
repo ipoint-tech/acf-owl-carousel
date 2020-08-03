@@ -69,9 +69,10 @@ function acfos_brands_no_slider() {
     while( have_rows('brands') ) : the_row();
 
       $brand_name = get_sub_field('brand_name');
+      $safe_brand_name = htmlspecialchars ($brand_name);
 
       if( !empty( $brand_name ) ):
-        $html .= '<div>'. $brand_name . '</div>';
+        $html .= '<div>'. $safe_brand_name . '</div>';
       endif;
 
     endwhile;
